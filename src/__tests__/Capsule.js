@@ -34,7 +34,7 @@ describe('Capsules', () => {
     }
   `
 
-  it('make a request for allCapsules', async () => {
+  test('make a request for allCapsules', async () => {
     expect.assertions(1)
 
     await expect(graphql(schema, query)).resolves.toEqual({
