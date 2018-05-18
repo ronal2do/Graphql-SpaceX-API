@@ -4,7 +4,9 @@
     "graphql-tools": "^3.0.1",
     "graphql-yoga": "^1.13.1",
     "helmet": "^3.12.1",
+    "jest-environment-node": "^22.4.3",
     "mongodb": "^3.1.0-beta4",
+    "mongodb-memory-server": "^1.7.4",
     "mongoose": "^5.1.1",
     "nodemon": "^1.17.4"
   },
@@ -23,11 +25,12 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-0": "^6.24.1",
-    "babel-register": "^6.26.0"
+    "babel-register": "^6.26.0",
+    "jest": "^22.4.4"
   },
   "scripts": {
     "start": "nodemon src/index.js --exec babel-node",
-    "test": "yarn test"
+    "test": "jest --coverage --forceExit --runInBand"
   },
   "repository": {
     "type": "git",
@@ -42,5 +45,17 @@
   "bugs": {
     "url": "https://github.com/ronal2do/Graphql-SpaceX-API/issues"
   },
-  "homepage": "https://github.com/ronal2do/Graphql-SpaceX-API#readme"
+  "homepage": "https://github.com/ronal2do/Graphql-SpaceX-API#readme",
+  "jest": {
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "html"
+    ],
+    "coverageDirectory": "./coverage/",
+    "resetModules": true
+  }
 }
