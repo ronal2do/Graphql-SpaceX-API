@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Capsules correctly object allCapsules 1`] = `
+Object {
+  "data": Object {
+    "allCapsules": Array [
+      Object {
+        "_id": "Hello World",
+        "capsule_id": "Hello World",
+        "capsule_serial": "Hello World",
+        "details": "Hello World",
+        "original_launch": "Hello World",
+        "status": "Hello World",
+        "type": "Hello World",
+      },
+      Object {
+        "_id": "Hello World",
+        "capsule_id": "Hello World",
+        "capsule_serial": "Hello World",
+        "details": "Hello World",
+        "original_launch": "Hello World",
+        "status": "Hello World",
+        "type": "Hello World",
+      },
+    ],
+  },
+}
+`;
