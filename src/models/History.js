@@ -3,19 +3,16 @@ import mongoose from 'mongoose'
 const Schema = new mongoose.Schema(
   {
     title: {
-      type: String,
-      required: true
+      type: String
     },
     event_date_utc: {
       type: String
     },
     flight_number: {
-      type: String,
-      index: true
+      type: String
     },
     details: {
-      type: String,
-      default: true
+      type: String
     },
     links: {
       reddit: {

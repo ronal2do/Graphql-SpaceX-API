@@ -3,19 +3,16 @@ import mongoose from 'mongoose'
 const Schema = new mongoose.Schema(
   {
     project_name: {
-      type: String,
-      required: true
+      type: String
     },
     version: {
       type: String
     },
     project_link: {
-      type: String,
-      index: true
+      type: String
     },
     organization: {
-      type: String,
-      default: true
+      type: String
     },
     organization_link: {
       type: String

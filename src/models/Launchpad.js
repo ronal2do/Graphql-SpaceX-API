@@ -3,15 +3,13 @@ import mongoose from 'mongoose'
 const Schema = new mongoose.Schema(
   {
     id: {
-      type: String,
-      required: true
+      type: String
     },
     full_name: {
       type: String
     },
     status: {
-      type: String,
-      index: true
+      type: String
     },
     location: {
       name: {

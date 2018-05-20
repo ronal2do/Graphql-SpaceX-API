@@ -15,7 +15,6 @@ export default {
   Query: {
     allCapsules: async () => {
       try {
-        // Use lean because we don't need the mongoose object returned
         const res = await Capsule.find({})
         return res
       } catch (err) {
@@ -24,7 +23,6 @@ export default {
     },
     allCores: async () => {
       try {
-        // Use lean because we don't need the mongoose object returned
         const res = await Core.find({})
         return res
       } catch (err) {
@@ -33,40 +31,36 @@ export default {
     },
     allDragons: async () => {
       try {
-        // Use lean because we don't need the mongoose object returned
         const res = await Dragon.find({})
         return res
       } catch (err) {
         throw new Error(err)
       }
-    }
-    // History: async () => {
-    //   try {
-    //     // Use lean because we don't need the mongoose object returned
-    //     const res = await History.find({})
-    //     return res
-    //   } catch (err) {
-    //     throw new Error(err)
-    //   }
-    // },
-    // Home: async () => {
-    //   try {
-    //     // Use lean because we don't need the mongoose object returned
-    //     const res = await Home.find({})
-    //     return res
-    //   } catch (err) {
-    //     throw new Error(err)
-    //   }
-    // },
-    // Info: async () => {
-    //   try {
-    //     // Use lean because we don't need the mongoose object returned
-    //     const res = await Info.find({})
-    //     return res
-    //   } catch (err) {
-    //     throw new Error(err)
-    //   }
-    // },
+    },
+    allHistories: async () => {
+      try {
+        const res = await History.find({})
+        return res
+      } catch (err) {
+        throw new Error(err)
+      }
+    },
+    allHomes: async () => {
+      try {
+        const res = await Home.find({})
+        return res
+      } catch (err) {
+        throw new Error(err)
+      }
+    },
+    allInfos: async () => {
+      try {
+        const res = await Info.find({})
+        return res
+      } catch (err) {
+        throw new Error(err)
+      }
+    },
     // Launch: async () => {
     //   try {
     //     // Use lean because we don't need the mongoose object returned
@@ -76,15 +70,14 @@ export default {
     //     throw new Error(err)
     //   }
     // },
-    // Launchpad: async () => {
-    //   try {
-    //     // Use lean because we don't need the mongoose object returned
-    //     const res = await Launchpad.find({})
-    //     return res
-    //   } catch (err) {
-    //     throw new Error(err)
-    //   }
-    // },
+    allLaunchpads: async () => {
+      try {
+        const res = await Launchpad.find({})
+        return res
+      } catch (err) {
+        throw new Error(err)
+      }
+    },
     // Rocket: async () => {
     //   try {
     //     // Use lean because we don't need the mongoose object returned

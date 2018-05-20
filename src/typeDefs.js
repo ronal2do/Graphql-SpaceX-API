@@ -136,28 +136,28 @@ export const typeDefs = `
     }
 
     # Info
-    # type Info {
-    #   _id: String!
-    #   name: String
-    #   founder: String
-    #   founded: Int
-    #   employees: Int
-    #   vehicles: Int
-    #   launch_sites: Int
-    #   test_sites: Int
-    #   ceo: String
-    #   cto: String
-    #   coo: String
-    #   cto_propulsion: String
-    #   valuation: Int
-    #   headquarters {
-    #       address: String
-    #       city: String
-    #       state: String
-    #   }
-    #   summary: String
-    # }
-
+    type Info {
+      _id: String!
+      name: String
+      founder: String
+      founded: Int
+      employees: Int
+      vehicles: Int
+      launch_sites: Int
+      test_sites: Int
+      ceo: String
+      cto: String
+      coo: String
+      cto_propulsion: String
+      valuation: Int
+      headquarters: Headquarters
+      summary: String
+    }
+    type  Headquarters {
+        address: String
+        city: String
+        state: String
+    }
     # Launch
     # type Launch {
     #   _id: String!
@@ -226,22 +226,23 @@ export const typeDefs = `
     # }
 
     # Launchpad
-    # type Launchpad {
-    #   _id: String!
-    #   id: String
-    #   full_name: String
-    #   status: String
-    #   location {
-    #       name: String
-    #       region: String
-    #       latitude: String
-    #       longitude: String
-    #   }
-    #   vehicles_launched: [
-    #       String
-    #   ], 
-    #   details: String
-    # }
+    type Launchpad {
+      _id: String!
+      id: String
+      full_name: String
+      status: String
+      location: Location
+      vehicles_launched: [
+          String
+      ], 
+      details: String
+    }
+    type Location {
+        name: String
+        region: String
+        latitude: String
+        longitude: String
+    }
 
     # Rocket
     # type Rocket {
@@ -414,5 +415,9 @@ export const typeDefs = `
         allCapsules(filter: String skip: Int first: Int): [Capsule!]!
         allCores(filter: String skip: Int first: Int): [Core!]!
         allDragons(filter: String skip: Int first: Int): [Dragon!]!
+        allHistories(filter: String skip: Int first: Int): [History!]!
+        allHomes(filter: String skip: Int first: Int): [Home!]!
+        allInfos(filter: String skip: Int first: Int): [Info!]!
+        allLaunchpads(filter: String skip: Int first: Int): [Launchpad!]!
     }
 `
