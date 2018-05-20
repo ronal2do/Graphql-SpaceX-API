@@ -90,3 +90,5 @@ Local development info can be found [here](https://github.com/r-spacex/SpaceX-AP
 ## License
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fronal2do%2FGraphql-SpaceX-API.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fronal2do%2FGraphql-SpaceX-API?ref=badge_large)
+
+<p align="center"><a href="https://oss.prisma.io"><img src="https://imgur.com/IMU2ERq.png" alt="Prisma" height="170px"></a></p>
