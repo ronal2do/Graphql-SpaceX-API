@@ -2,25 +2,25 @@ import mongoose from 'mongoose'
 
 const Schema = new mongoose.Schema(
   {
-    capsule_serial: {
+    project_name: {
       type: String,
       required: true
     },
-    capsule_id: {
+    version: {
       type: String
     },
-    status: {
+    project_link: {
       type: String,
       index: true
     },
-    original_launch: {
+    organization: {
       type: String,
       default: true
     },
-    type: {
+    organization_link: {
       type: String
     },
-    details: {
+    description: {
       type: String
     }
   },

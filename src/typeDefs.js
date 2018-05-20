@@ -1,4 +1,5 @@
 export const typeDefs = `
+    # Capsule
     type Capsule {
         _id: String!
         capsule_serial: String!
@@ -8,6 +9,8 @@ export const typeDefs = `
         type: String
         details: String
     }
+
+    # Core
     type Core {
         _id: String!
         core_serial: String 
@@ -22,6 +25,8 @@ export const typeDefs = `
         water_landing: Boolean 
         details: String
     }
+
+    # Dragon
     type Dragon { 
         _id: String!
         id: String
@@ -66,14 +71,14 @@ export const typeDefs = `
         cubic_feet: Int
     }
     type Trunk {
-        trunk_volume: trunk_volume
-        cargo: cargo
+        trunk_volume: Trunk_volume
+        cargo: Cargo
     } 
-    type trunk_volume {
+    type Trunk_volume {
         cubic_meters: Int
         cubic_feet: Int
     } 
-    type cargo {
+    type Cargo {
         solar_array: Int
         unpressurized_cargo: Boolean
     }
@@ -104,27 +109,33 @@ export const typeDefs = `
         lbf: Int
     }
 
-    #  type History {
-    #    _id: String!
-    #    title: String
-    #    event_date_utc: String
-    #    flight_number:String
-    #    details: String
-    #    links {
-    #        reddit: String
-    #        spaceflightnow: String
-    #        wikipedia: String
-    #    }
-    #  }
-    # type Home {
-    #   _id: String!
-    #   project_name: String
-    #   version: String
-    #   project_link: String
-    #   organization: String
-    #   organization_link: String
-    #   description: String
-    # }
+    # History
+     type History {
+       _id: String!
+       title: String
+       event_date_utc: String
+       flight_number:String
+       details: String
+       links: Links
+     }
+    type Links {
+        reddit: String
+        spaceflightnow: String
+        wikipedia: String
+    }
+
+    # Home
+    type Home {
+      _id: String!
+      project_name: String
+      version: String
+      project_link: String
+      organization: String
+      organization_link: String
+      description: String
+    }
+
+    # Info
     # type Info {
     #   _id: String!
     #   name: String
@@ -146,6 +157,8 @@ export const typeDefs = `
     #   }
     #   summary: String
     # }
+
+    # Launch
     # type Launch {
     #   _id: String!
     #   flight_number: Int
@@ -211,6 +224,8 @@ export const typeDefs = `
     #   }
     #   details: String
     # }
+
+    # Launchpad
     # type Launchpad {
     #   _id: String!
     #   id: String
@@ -227,6 +242,8 @@ export const typeDefs = `
     #   ], 
     #   details: String
     # }
+
+    # Rocket
     # type Rocket {
     #   _id: String!
     #   id: String
@@ -320,6 +337,8 @@ export const typeDefs = `
     #   }
     #   description: String
     # }
+
+    # Upcoming
     # type Upcoming {
     #   _id: String!
     #   flight_number: Int

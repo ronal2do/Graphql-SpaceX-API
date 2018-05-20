@@ -2,26 +2,31 @@ import mongoose from 'mongoose'
 
 const Schema = new mongoose.Schema(
   {
-    capsule_serial: {
+    title: {
       type: String,
       required: true
     },
-    capsule_id: {
+    event_date_utc: {
       type: String
     },
-    status: {
+    flight_number: {
       type: String,
       index: true
     },
-    original_launch: {
+    details: {
       type: String,
       default: true
     },
-    type: {
-      type: String
-    },
-    details: {
-      type: String
+    links: {
+      reddit: {
+        type: String
+      },
+      spaceflightnow: {
+        type: String
+      },
+      wikipedia: {
+        type: String
+      }
     }
   },
   {
