@@ -1,5 +1,4 @@
-// @flow
-import mongoose from 'mongoose'
+//https://github.com/entria/graphql-dataloader-boilerplate/blob/master/test/helper.jsimport mongoose from 'mongoose'
 
 const { ObjectId } = mongoose.Types
 
