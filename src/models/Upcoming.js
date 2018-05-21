@@ -20,7 +20,6 @@ const Schema = new mongoose.Schema(
     launch_date_local: {
       type: String
     },
-
     rocket: {
       rocket_id: { type: String },
       rocket_name: { type: String },
@@ -109,7 +108,7 @@ const Schema = new mongoose.Schema(
       createdAt: 'createdAt',
       updatedAt: 'updatedAt'
     },
-    collection: 'upcoming'
+    collection: 'upcoming_v2'
   }
 )
 

@@ -232,9 +232,7 @@ export const typeDefs = `
       full_name: String
       status: String
       location: Location
-      vehicles_launched: [
-          String
-      ], 
+      vehicles_launched: [String]
       details: String
     }
     type Location {
@@ -422,5 +420,6 @@ export const typeDefs = `
         allHomes(filter: String skip: Int first: Int): [Home!]!
         allInfos(filter: String skip: Int first: Int): [Info!]!
         allLaunchpads(filter: String skip: Int first: Int): [Launchpad!]!
+        allUpcomings(filter: String skip: Int first: Int): [Upcoming!]!
     }
 `

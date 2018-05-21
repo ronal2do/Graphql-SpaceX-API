@@ -63,7 +63,65 @@ TODO
     }
   }
 ```
-
+```js
+{
+	allUpcomings {
+    _id
+    launch_year
+    rocket {
+      rocket_id
+      first_stage{
+        cores {
+          reused
+          land_success
+          flight
+          landing_type
+        }
+      }
+    }
+  }
+}
+```
+```js
+{
+  "data": {
+    "allUpcomings": [
+      {
+        "_id": "5ac10a0079d57205a0196397",
+        "launch_year": "2018",
+        "rocket": {
+          "rocket_id": "falcon9",
+          "first_stage": {
+            "cores": [
+              {
+                "reused": true,
+                "land_success": null,
+                "flight": 2,
+                "landing_type": null
+              }
+            ]
+          }
+        }
+      },
+      {
+        "_id": "5ad7cdcd79d5727fb193df76",
+        "launch_year": "2018",
+        "rocket": {
+          "rocket_id": "falcon9",
+          "first_stage": {
+            "cores": [
+              {
+                "reused": true,
+                "land_success": null,
+                "flight": 2,
+                "landing_type": null
+              }
+            ]
+          }
+        }
+      },
+      ...
+```
 ## Contributions
 
 See the [Contribution](https://github.com/r-spacex/SpaceX-API/blob/master/CONTRIBUTING.md) guide for detailed steps

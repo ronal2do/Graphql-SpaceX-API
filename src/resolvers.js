@@ -85,7 +85,7 @@ export default {
     //     throw new Error(err)
     //   }
     // },
-    Upcoming: async () => {
+    allUpcomings: async () => {
       try {
         const res = await Upcoming.find({})
         return res
