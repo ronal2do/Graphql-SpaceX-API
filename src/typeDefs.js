@@ -340,76 +340,79 @@ export const typeDefs = `
     # }
 
     # Upcoming
-    # type Upcoming {
-    #   _id: String!
-    #   flight_number: Int
-    #   mission_name: String
-    #   launch_year: String
-    #   launch_date_unix: Int
-    #   launch_date_utc: String
-    #   launch_date_local: String
-    #   rocket {
-    #       rocket_id: String
-    #       rocket_name: String
-    #       rocket_type: String
-    #       first_stage {
-    #           cores: [
-    #               {
-    #                   core_serial: String
-    #                   flight: Int
-    #                   block: Int
-    #                   reused: Boolean, 
-    #                   land_success: String
-    #                   landing_type: String
-    #                   landing_vehicle: String
-    #               }
-    #           ]
-    #       }
-    #       second_stage {
-    #           payloads: [
-    #               {
-    #                   payload_id: String
-    #                   reused: Boolean, 
-    #                   customers: [
-    #                       String
-    #                   ], 
-    #                   payload_type: String
-    #                   payload_mass_kg: Float
-    #                   payload_mass_lbs: String
-    #                   orbit: String
-    #               }
-    #           ]
-    #       }
-    #   }
-    #   telemetry {
-    #       flight_club: String
-    #   }
-    #   reuse {
-    #       core: Boolean, 
-    #       side_core1: Boolean, 
-    #       side_core2: Boolean, 
-    #       fairings: Boolean, 
-    #       capsule: Boolean
-    #   }
-    #   launch_site {
-    #       site_id: String
-    #       site_name: String
-    #       site_name_long: String
-    #   }
-    #   launch_success: String
-    #   links {
-    #       mission_patch: String
-    #       mission_patch_small: String
-    #       reddit_campaign: String
-    #       reddit_launch: String
-    #       reddit_recovery: String
-    #       reddit_media: String
-    #       presskit: String
-    #       article_link: String
-    #       video_link: String
-    #   }
-    #   details: String
-    # }
+    type Upcoming {
+      _id: String!
+      flight_number: Int
+      mission_name: String
+      launch_year: String
+      launch_date_unix: Int
+      launch_date_utc: String
+      launch_date_local: String
+      rocket: Rocket
+      telemetry: Telemetry
+      reuse: Reuse
+      launch_site: Launch_site
+      launch_success: String
+      links: Upcoming_links
+      details: String
+    }
+    type Reuse {
+        core: Boolean, 
+        side_core1: Boolean, 
+        side_core2: Boolean, 
+        fairings: Boolean, 
+        capsule: Boolean
+    }
+    type Telemetry {
+          flight_club: String
+      }
+    type Rocket {
+          rocket_id: String
+          rocket_name: String
+          rocket_type: String
+          first_stage: fsCores
+          second_stage: Second_stage
+      }
+    type Second_stage {
+        payloads: [Payloads]
+    }
+    type Payloads {
+        payload_id: String
+        reused: Boolean, 
+        customers: [String]
+        payload_type: String
+        payload_mass_kg: Float
+        payload_mass_lbs: String
+        orbit: String
+    }
+    type fsCores {
+        cores: [fCores]
+    }
+    type fCores {
+        core_serial: String
+        flight: Int
+        block: Int
+        reused: Boolean, 
+        land_success: String
+        landing_type: String
+        landing_vehicle: String
+    }
+    type Launch_site {
+        site_id: String
+        site_name: String
+        site_name_long: String
+    }
+    type Upcoming_links {
+        mission_patch: String
+        mission_patch_small: String
+        reddit_campaign: String
+        reddit_launch: String
+        reddit_recovery: String
+        reddit_media: String
+        presskit: String
+        article_link: String
+        video_link: String
+    }
 
     type Query {
         allCapsules(filter: String skip: Int first: Int): [Capsule!]!

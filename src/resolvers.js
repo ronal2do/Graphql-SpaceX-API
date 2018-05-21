@@ -63,7 +63,6 @@ export default {
     },
     // Launch: async () => {
     //   try {
-    //     // Use lean because we don't need the mongoose object returned
     //     const res = await Launch.find({})
     //     return res
     //   } catch (err) {
@@ -80,21 +79,19 @@ export default {
     },
     // Rocket: async () => {
     //   try {
-    //     // Use lean because we don't need the mongoose object returned
     //     const res = await Rocket.find({})
     //     return res
     //   } catch (err) {
     //     throw new Error(err)
     //   }
     // },
-    // Upcoming: async () => {
-    //   try {
-    //     // Use lean because we don't need the mongoose object returned
-    //     const res = await Upcoming.find({})
-    //     return res
-    //   } catch (err) {
-    //     throw new Error(err)
-    //   }
-    // }
+    Upcoming: async () => {
+      try {
+        const res = await Upcoming.find({})
+        return res
+      } catch (err) {
+        throw new Error(err)
+      }
+    }
   }
 }
