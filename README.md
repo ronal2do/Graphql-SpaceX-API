@@ -37,7 +37,7 @@ TODO
   }
 ```
 
-```
+```js
 {
   "data": {
     "allCapsules": [
@@ -63,6 +63,7 @@ TODO
     }
   }
 ```
+
 ```js
 {
 	allUpcomings {
@@ -82,6 +83,7 @@ TODO
   }
 }
 ```
+
 ```js
 {
   "data": {
@@ -122,6 +124,7 @@ TODO
       },
       ...
 ```
+
 ## Contributions
 
 See the [Contribution](https://github.com/r-spacex/SpaceX-API/blob/master/CONTRIBUTING.md) guide for detailed steps
