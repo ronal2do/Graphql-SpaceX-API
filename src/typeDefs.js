@@ -413,7 +413,7 @@ export const typeDefs = `
     }
 
     type Query {
-        allCapsules(filter: String skip: Int first: Int): [Capsule!]!
+        allCapsules(type: String filter: String skip: Int first: Int): [Capsule!]!
         allCores(filter: String skip: Int first: Int): [Core!]!
         allDragons(filter: String skip: Int first: Int): [Dragon!]!
         allHistories(filter: String skip: Int first: Int): [History!]!

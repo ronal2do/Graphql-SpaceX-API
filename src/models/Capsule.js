@@ -4,7 +4,8 @@ const Schema = new mongoose.Schema(
   {
     capsule_serial: {
       type: String,
-      required: true
+      required: true,
+      index: true
     },
     capsule_id: {
       type: String
@@ -18,10 +19,12 @@ const Schema = new mongoose.Schema(
       default: true
     },
     type: {
-      type: String
+      type: String,
+      index: true
     },
     details: {
-      type: String
+      type: String,
+      index: true
     }
   },
   {
@@ -32,5 +35,7 @@ const Schema = new mongoose.Schema(
     collection: 'capsule'
   }
 )
+
+Schema.index({ details: 'text', type: 'text' })
 
 export default mongoose.model('Capsule', Schema)

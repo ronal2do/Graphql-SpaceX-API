@@ -13,10 +13,15 @@ import {
 
 export default {
   Query: {
-    allCapsules: async () => {
+    allCapsules: async (_, args) => {
       try {
-        const res = await Capsule.find({})
-        return res
+        const where = args.filter ? {
+            $text: { $search: args.filter }
+          } : {}
+
+        return await Capsule.find(where, { score: { $meta: 'textScore' } } ).sort({
+          score: { $meta: 'textScore' }
+        })
       } catch (err) {
         throw new Error(err)
       }
