@@ -2,7 +2,6 @@ import 'babel-polyfill'
 
 import { GraphQLServer } from 'graphql-yoga'
 import { connectDatabase } from './database'
-
 import { typeDefs } from './typeDefs'
 import resolvers from './resolvers'
 ;(async () => {

@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "express-rate-limit": "^2.11.0",
+    "graphql-relay": "^0.5.5",
     "graphql-tools": "^3.0.1",
     "graphql-yoga": "^1.13.1",
     "helmet": "^3.12.1",
@@ -12,8 +13,7 @@
   },
   "name": "graphql-spacex-api",
   "version": "1.0.0",
-  "description":
-    "Open Source GRAPHQL API for rocket, core, capsule, pad, and launch data, inpirated in https://github.com/r-spacex/SpaceX-API",
+  "description": "Open Source GRAPHQL API for rocket, core, capsule, pad, and launch data, inpirated in https://github.com/r-spacex/SpaceX-API",
   "main": "index.js",
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -38,7 +38,10 @@
     "type": "git",
     "url": "git+https://github.com/ronal2do/Graphql-SpaceX-API.git"
   },
-  "keywords": ["graphql-yoga", "graphql"],
+  "keywords": [
+    "graphql-yoga",
+    "graphql"
+  ],
   "author": "Ronaldo Lima",
   "license": "MIT",
   "bugs": {
@@ -47,8 +50,13 @@
   "homepage": "https://github.com/ronal2do/Graphql-SpaceX-API#readme",
   "jest": {
     "testEnvironment": "node",
-    "testPathIgnorePatterns": ["/node_modules/"],
-    "coverageReporters": ["lcov", "html"],
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "html"
+    ],
     "coverageDirectory": "./coverage/",
     "resetModules": true
   }

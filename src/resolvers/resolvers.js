@@ -9,17 +9,21 @@ import {
   Launchpad,
   Rocket,
   Upcoming
-} from './models'
+} from '../models'
 
 export default {
   Query: {
     allCapsules: async (_, args) => {
       try {
-        const where = args.filter ? {
+        const where = args.filter
+          ? {
             $text: { $search: args.filter }
-          } : {}
+          }
+          : {}
 
-        return await Capsule.find(where, { score: { $meta: 'textScore' } } ).sort({
+        return await Capsule.find(where, {
+          score: { $meta: 'textScore' }
+        }).sort({
           score: { $meta: 'textScore' }
         })
       } catch (err) {
