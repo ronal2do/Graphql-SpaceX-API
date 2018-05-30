@@ -23,38 +23,13 @@ describe('Capsules', () => {
     }
   `
 
-  test('make a request for allCapsules', async () => {
-    expect.assertions(1)
-
-    await expect(graphql(schema, query)).resolves.toEqual({
-      data: {
-        allCapsules: [
-          {
-            _id: 'Hello World',
-            capsule_id: 'Hello World',
-            capsule_serial: 'Hello World',
-            details: 'Hello World',
-            original_launch: 'Hello World',
-            status: 'Hello World',
-            type: 'Hello World'
-          },
-          {
-            _id: 'Hello World',
-            capsule_id: 'Hello World',
-            capsule_serial: 'Hello World',
-            details: 'Hello World',
-            original_launch: 'Hello World',
-            status: 'Hello World',
-            type: 'Hello World'
-          }
-        ]
-      }
-    })
-  })
-
   it('correctly object allCapsules', async () => {
     expect.assertions(1)
-
-    await expect(graphql(schema, query)).resolves.toMatchSnapshot()
+    const result = expect(graphql(schema, query))
+    await expect(graphql(schema, query)).resolves.toMatchSnapshot(
+      {
+        // _id: expect.any(String)
+      }
+    )
   })
 })
